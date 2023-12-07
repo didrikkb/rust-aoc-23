@@ -57,9 +57,9 @@ fn find_first_value(word: &str) -> Option<i32> {
 }
 
 fn find_last_value(word: &str) -> Option<i32> {
-    for x in words_and_values() {
-        if word.ends_with(x.0) {
-            return Some(x.1);
+    for (w, val) in words_and_values() {
+        if word.ends_with(w) {
+            return Some(val);
         }
     }
     return None;
