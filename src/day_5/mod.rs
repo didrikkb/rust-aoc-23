@@ -8,6 +8,7 @@ struct Range {
 }
 
 pub fn part_1(input: Vec<Rc<str>>) -> i32 {
+    println!("{:?}", input);
     let mut input = input.iter();
 
     let seeds: Vec<i64> = input
@@ -125,9 +126,55 @@ pub fn part_2(input: Vec<Rc<str>>) -> i32 {
             }
             location = location.min(curr_val);
         }
-        println!("Pair {} of {} pairs", seed_pair_idx/2, seeds.len()/2);
     }
 
-
     return location as i32;
+}
+
+#[test]
+fn part_1_test() {
+    assert_eq!(35, part_1(test_data()));
+}
+
+#[test]
+fn part_2_test() {
+    assert_eq!(46, part_2(test_data()));
+}
+
+fn test_data() -> Vec<Rc<str>> {
+    return vec![
+        "seeds: 79 14 55 13".into(),
+        "".into(),
+        "seed-to-soil map:".into(),
+        "50 98 2".into(),
+        "52 50 48".into(),
+        "".into(),
+        "soil-to-fertilizer map:".into(),
+        "0 15 37".into(),
+        "37 52 2".into(),
+        "39 0 15".into(),
+        "".into(),
+        "fertilizer-to-water map:".into(),
+        "49 53 8".into(),
+        "0 11 42".into(),
+        "42 0 7".into(),
+        "57 7 4".into(),
+        "".into(),
+        "water-to-light map:".into(),
+        "88 18 7".into(),
+        "18 25 70".into(),
+        "".into(),
+        "light-to-temperature map:".into(),
+        "45 77 23".into(),
+        "81 45 19".into(),
+        "68 64 13".into(),
+        "".into(),
+        "temperature-to-humidity map:".into(),
+        "0 69 1".into(),
+        "1 0 69".into(),
+        "".into(),
+        "humidity-to-location map:".into(),
+        "60 56 37".into(),
+        "56 93 4".into(),
+    ];
 }

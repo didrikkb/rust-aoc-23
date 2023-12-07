@@ -22,7 +22,6 @@ fn main() {
         Some("d6p1") => Some(day_6::part_1(input)),
         Some("d6p2") => Some(day_6::part_2(input)),
 
-
         _ => {
             println!("Wuut?");
             None
