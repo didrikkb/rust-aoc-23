@@ -3,6 +3,7 @@ use std::{
     rc::Rc,
 };
 mod day_1;
+mod day_2;
 mod day_3;
 mod day_5;
 mod day_6;
@@ -15,6 +16,8 @@ fn main() {
     let res = match input.pop().as_deref() {
         Some("d1p1") => Some(day_1::part_1(input)),
         Some("d1p2") => Some(day_1::part_2(input)),
+        Some("d2p1") => Some(day_2::part_1(input)),
+        Some("d2p2") => Some(day_2::part_2(input)),
         Some("d3p1") => Some(day_3::part_1(input)),
         Some("d3p2") => Some(day_3::part_2(input)),
         Some("d5p1") => Some(day_5::part_1(input)),

@@ -8,13 +8,12 @@ struct Range {
 }
 
 pub fn part_1(input: Vec<Rc<str>>) -> i32 {
-    println!("{:?}", input);
     let mut input = input.iter();
 
     let seeds: Vec<i64> = input
         .next()
         .unwrap()
-        .split(' ')
+        .split_ascii_whitespace()
         .filter_map(|n| n.parse::<i64>().ok())
         .collect();
 
@@ -33,7 +32,7 @@ pub fn part_1(input: Vec<Rc<str>>) -> i32 {
         }
 
         let range = line
-            .split(' ')
+            .split_ascii_whitespace()
             .filter_map(|n| n.parse::<i64>().ok())
             .collect::<Vec<i64>>();
 
@@ -51,7 +50,7 @@ pub fn part_1(input: Vec<Rc<str>>) -> i32 {
 
     for seed in seeds {
         let mut curr_val = seed;
-        for map in maps.iter() {
+        for map in &maps {
             for range in map {
                 if curr_val >= range.source_range_start
                     && curr_val < range.source_range_start + range.range_len
@@ -72,7 +71,7 @@ pub fn part_2(input: Vec<Rc<str>>) -> i32 {
     let seeds: Vec<i64> = input
         .next()
         .unwrap()
-        .split(' ')
+        .split_ascii_whitespace()
         .filter_map(|n| n.parse::<i64>().ok())
         .collect();
 
@@ -91,7 +90,7 @@ pub fn part_2(input: Vec<Rc<str>>) -> i32 {
         }
 
         let range = line
-            .split(' ')
+            .split_ascii_whitespace()
             .filter_map(|n| n.parse::<i64>().ok())
             .collect::<Vec<i64>>();
 
