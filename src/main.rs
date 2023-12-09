@@ -5,6 +5,7 @@ use std::{
 mod day_1;
 mod day_2;
 mod day_3;
+mod day_4;
 mod day_5;
 mod day_6;
 //  { echo "d1p1"; cat day_1/data.txt; } | cargo run
@@ -20,6 +21,8 @@ fn main() {
         Some("d2p2") => Some(day_2::part_2(input)),
         Some("d3p1") => Some(day_3::part_1(input)),
         Some("d3p2") => Some(day_3::part_2(input)),
+        Some("d4p1") => Some(day_4::part_1(input)),
+        Some("d4p2") => Some(day_4::part_2(input)),
         Some("d5p1") => Some(day_5::part_1(input)),
         Some("d5p2") => Some(day_5::part_2(input)),
         Some("d6p1") => Some(day_6::part_1(input)),

@@ -1,14 +1,8 @@
 use std::rc::Rc;
 
 pub fn part_1(input: Vec<Rc<str>>) -> i32 {
-    let times: Vec<i32> = input[0]
-        .split_ascii_whitespace()
-        .filter_map(|x| x.parse::<i32>().ok())
-        .collect();
-    let distances: Vec<i32> = input[1]
-        .split_ascii_whitespace()
-        .filter_map(|x| x.parse::<i32>().ok())
-        .collect();
+    let times: Vec<i32> = get_nums_in_line(input[0].clone());
+    let distances: Vec<i32> = get_nums_in_line(input[1].clone());
 
     return times
         .iter()
@@ -32,8 +26,8 @@ pub fn part_1(input: Vec<Rc<str>>) -> i32 {
 }
 
 pub fn part_2(input: Vec<Rc<str>>) -> i32 {
-    let time = parse_line_as_num( input[0].clone()).unwrap();
-    let distance =  parse_line_as_num( input[1].clone()).unwrap();
+    let time = parse_line_as_num(input[0].clone());
+    let distance = parse_line_as_num(input[1].clone());
 
     let mut l = 0;
     let mut r = (time + 1) / 2;
@@ -49,14 +43,23 @@ pub fn part_2(input: Vec<Rc<str>>) -> i32 {
     return (time - 2 * r + 1) as i32;
 }
 
-fn parse_line_as_num(line: Rc<str>) -> Option<i64> {
-    return line.as_bytes()
-    .iter()
-    .filter_map(|&ch| match ch {
-        b'0'..=b'9' => Some((ch - b'0') as i64),
-        _ => None,
-    })
-    .reduce(|acc, x| acc * 10 + x);
+fn get_nums_in_line(line: Rc<str>) -> Vec<i32> {
+    return line
+        .split_ascii_whitespace()
+        .filter_map(|x| x.parse::<i32>().ok())
+        .collect();
+}
+
+fn parse_line_as_num(line: Rc<str>) -> i64 {
+    return line
+        .as_bytes()
+        .iter()
+        .filter_map(|&ch| match ch {
+            b'0'..=b'9' => Some((ch - b'0') as i64),
+            _ => None,
+        })
+        .reduce(|acc, x| acc * 10 + x)
+        .unwrap();
 }
 
 #[test]
