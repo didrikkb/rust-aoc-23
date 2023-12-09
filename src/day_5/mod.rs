@@ -140,6 +140,7 @@ fn part_2_test() {
     assert_eq!(46, part_2(test_data()));
 }
 
+#[allow(dead_code)]
 fn test_data() -> Vec<Rc<str>> {
     return vec![
         "seeds: 79 14 55 13".into(),

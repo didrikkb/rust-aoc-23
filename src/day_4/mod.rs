@@ -89,19 +89,16 @@ fn parse_numbers(nums: &str) -> Vec<i32> {
 
 #[test]
 fn part_1_test() {
-    let input: Vec<Rc<str>> = vec![
-        "Card 1: 41 48 83 86 17 | 83 86  6 31 17  9 48 53".into(),
-        "Card 2: 13 32 20 16 61 | 61 30 68 82 17 32 24 19".into(),
-        "Card 3:  1 21 53 59 44 | 69 82 63 72 16 21 14  1".into(),
-        "Card 4: 41 92 73 84 69 | 59 84 76 51 58  5 54 83".into(),
-        "Card 5: 87 83 26 28 32 | 88 30 70 12 93 22 82 36".into(),
-        "Card 6: 31 18 13 56 72 | 74 77 10 23 35 67 36 11".into(),
-    ];
-    assert_eq!(13, part_1(input));
+    assert_eq!(13, part_1(test_data()));
 }
 #[test]
 fn part_2_test() {
-    let input: Vec<Rc<str>> = vec![
+    assert_eq!(30, part_2(test_data()));
+}
+
+#[allow(dead_code)]
+fn test_data() -> Vec<Rc<str>> {
+    return vec![
         "Card 1: 41 48 83 86 17 | 83 86  6 31 17  9 48 53".into(),
         "Card 2: 13 32 20 16 61 | 61 30 68 82 17 32 24 19".into(),
         "Card 3:  1 21 53 59 44 | 69 82 63 72 16 21 14  1".into(),
@@ -109,5 +106,4 @@ fn part_2_test() {
         "Card 5: 87 83 26 28 32 | 88 30 70 12 93 22 82 36".into(),
         "Card 6: 31 18 13 56 72 | 74 77 10 23 35 67 36 11".into(),
     ];
-    assert_eq!(30, part_2(input));
 }

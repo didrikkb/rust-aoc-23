@@ -64,18 +64,18 @@ fn parse_line_as_num(line: Rc<str>) -> i64 {
 
 #[test]
 fn part_1_test() {
-    let data: Vec<Rc<str>> = vec![
-        "Time:      7  15   30".into(),
-        "Distance:  9  40  200".into(),
-    ];
-    assert_eq!(part_1(data), 288);
+    assert_eq!(part_1(test_data()), 288);
 }
 
 #[test]
 fn part_2_test() {
-    let data: Vec<Rc<str>> = vec![
+    assert_eq!(part_2(test_data()), 71503);
+}
+
+#[allow(dead_code)]
+fn test_data() -> Vec<Rc<str>> {
+    return vec![
         "Time:      7  15   30".into(),
         "Distance:  9  40  200".into(),
     ];
-    assert_eq!(part_2(data), 71503);
 }

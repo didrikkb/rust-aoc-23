@@ -142,24 +142,17 @@ fn search_directions() -> [(i32, i32); 8] {
 
 #[test]
 fn part_1_test() {
-    let data: Vec<Rc<str>> = vec![
-        "467..114..".into(),
-        "...*......".into(),
-        "..35..633.".into(),
-        "......#...".into(),
-        "617*......".into(),
-        ".....+.58.".into(),
-        "..592.....".into(),
-        "......755.".into(),
-        "...$.*....".into(),
-        ".664.598..".into(),
-    ];
-    assert_eq!(part_1(data), 4361);
+    assert_eq!(part_1(test_data()), 4361);
 }
 
 #[test]
 fn part_2_test() {
-    let data: Vec<Rc<str>> = vec![
+    assert_eq!(part_2(test_data()), 467835);
+}
+
+#[allow(dead_code)]
+fn test_data() -> Vec<Rc<str>> {
+    return vec![
         "467..114..".into(),
         "...*......".into(),
         "..35..633.".into(),
@@ -171,5 +164,4 @@ fn part_2_test() {
         "...$.*....".into(),
         ".664.598..".into(),
     ];
-    assert_eq!(part_2(data), 467835);
 }
