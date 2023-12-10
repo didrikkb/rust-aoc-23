@@ -8,6 +8,7 @@ mod day_3;
 mod day_4;
 mod day_5;
 mod day_6;
+mod day_7;
 //  { echo "d1p1"; cat day_1/data.txt; } | cargo run
 
 fn main() {
@@ -27,6 +28,8 @@ fn main() {
         Some("d5p2") => Some(day_5::part_2(input)),
         Some("d6p1") => Some(day_6::part_1(input)),
         Some("d6p2") => Some(day_6::part_2(input)),
+        Some("d7p1") => Some(day_7::part_1(input)),
+        Some("d7p2") => Some(day_7::part_2(input)),
 
         _ => {
             println!("Wuut?");
