@@ -14,9 +14,8 @@ pub fn part_1(input: Vec<Rc<str>>) -> i32 {
 
 pub fn part_2(input: Vec<Rc<str>>) -> i32 {
     let hands = parse_hands(input, false);
-    let res = calculate_tot_winnings(hands);
 
-    return res as i32;
+    return calculate_tot_winnings(hands) as i32;
 }
 
 fn calculate_tot_winnings(mut hands: Vec<Hand>) -> i64 {
