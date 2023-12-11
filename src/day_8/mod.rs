@@ -67,8 +67,8 @@ pub fn part_2(input: Vec<Rc<str>>) -> i32 {
     let mut input = input.iter();
     let mut dirs = Directions::new(input.next().unwrap());
     let map = create_map(input);
-
     let mut curr_pos: Vec<Rc<[u8]>> = Vec::new();
+    
     for (key, _) in &map {
         if key[2] == b'A' {
             curr_pos.push(key.clone());
